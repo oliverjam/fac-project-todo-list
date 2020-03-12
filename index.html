@@ -6,6 +6,13 @@
     <title>To-do List | FAC Week 3 Example Project</title>
   </head>
   <body>
+    <form id="todoForm">
+      <label for="newTodo">New task</label>
+      <input type="text" id="newTodo" name="newTodo" />
+
+      <button id="addTodo" type="submit" aria-label="Save task">&plus;</button>
+    </form>
+    <ul id="todoList"></ul>
     <script src="todo.js"></script>
     <script src="test-helpers.js"></script>
     <script src="todo.test.js"></script>
