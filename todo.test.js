@@ -13,7 +13,27 @@ test("Submitting a new task adds it to the list", t => {
 });
 
 test("Checking an entry marks it as complete", t => {
-  // test goes here
+  // first we need to create a task
+  const todoInput = document.querySelector("#newTodo");
+  todoInput.value = "test thing to do";
+  const addTodoButton = document.querySelector("#addTodo");
+  addTodoButton.click();
+  const todoList = document.querySelector("#todoList");
+  const todoItem = todoList.firstElementChild;
+  const todoCheckbox = todoItem.querySelector("input[type='checkbox'");
+  const todoLabel = todoItem.querySelector("span");
+  todoCheckbox.click();
+
+  const labelStyles = getComputedStyle(todoLabel);
+  t.equal(
+    labelStyles["text-decoration"],
+    "line-through rgb(0, 0, 0)",
+    "Label should have strikethrough applied"
+  );
+
+  // reset DOM so we don't impact other tests
+  todoInput.value = "";
+  todoList.innerHTML = "";
 });
 
 test("Deleting an entry removes it from the list", t => {
