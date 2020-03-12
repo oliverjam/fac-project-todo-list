@@ -56,5 +56,19 @@ test("Deleting an entry removes it from the list", t => {
 });
 
 test("Toggling the filter hides completed tasks from the list", t => {
-  // test goes here
+  const { todoItem, reset } = addTestTodo("test thing to do");
+  const todoCheckbox = todoItem.querySelector("input[type='checkbox'");
+  todoCheckbox.click();
+
+  const filterCheckbox = document.querySelector("#filterComplete");
+  filterCheckbox.click();
+
+  t.equal(
+    todoItem.hidden,
+    true,
+    "Checked task should be hidden from todo list"
+  );
+
+  filterCheckbox.checked = false;
+  reset();
 });
