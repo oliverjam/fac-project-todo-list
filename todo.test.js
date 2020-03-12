@@ -11,7 +11,7 @@ function addTestTodo(text) {
     todoInput.value = "";
     todoList.innerHTML = "";
   };
-  return { todoItem, reset };
+  return { todoItem, todoList, reset };
 }
 
 test("Submitting a new task adds it to the list", t => {
@@ -43,7 +43,16 @@ test("Checking an entry marks it as complete", t => {
 });
 
 test("Deleting an entry removes it from the list", t => {
-  // test goes here
+  const { todoItem, todoList, reset } = addTestTodo("test thing to do");
+  const deleteTodoButton = todoItem.querySelector("button");
+  deleteTodoButton.click();
+  t.equal(
+    todoList.children.length,
+    0,
+    "List should have no tasks items inside"
+  );
+
+  reset();
 });
 
 test("Toggling the filter hides completed tasks from the list", t => {
