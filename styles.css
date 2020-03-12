@@ -41,6 +41,11 @@ button {
   background: none;
 }
 
+/* stop Firefox immediately showing a red outline for the required input */
+input:invalid {
+  box-shadow: none;
+}
+
 .addTodoRow {
   margin-top: 0.5rem;
   display: grid;
