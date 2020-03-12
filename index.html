@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List | FAC Week 3 Example Project</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <form id="todoForm">
@@ -13,6 +14,15 @@
       <button id="addTodo" type="submit" aria-label="Save task">&plus;</button>
     </form>
     <ul id="todoList"></ul>
+
+    <template id="todoItem">
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span></span>
+        </label>
+      </li>
+    </template>
     <script src="todo.js"></script>
     <script src="test-helpers.js"></script>
     <script src="todo.test.js"></script>
