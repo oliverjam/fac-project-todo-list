@@ -1,3 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Ensures hidden stuff stays hidden. Otherwise e.g. display: flex will override */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 36rem;
+  min-height: 100vh;
+  display: grid;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+  color: #fff;
+  background-color: hsl(0, 10%, 10%);
+}
+
+main {
+  border: 0.25rem solid;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+label {
+  display: block;
+}
+
+label,
+input,
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: none;
+}
+
+.addTodoRow {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.addTodo {
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+  color: hsl(0, 10%, 10%);
+  background-color: #fff;
+}
+
+.newTodo {
+  border: 0.125rem solid #fff;
+  padding: 0.5rem;
+  color: hsl(220, 10%, 10%);
+  background: none;
+}
+
+.newTodo:focus {
+  background-color: #fff;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxRow > * + * {
+  margin-left: 0.5rem;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid;
+  background: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fff;
+  background-image: linear-gradient(135deg, white 45%, black 0 45%);
+}
+
+button:focus,
+input[type="checkbox"]:focus {
+  outline: 0.125rem dashed #fff;
+  outline-offset: 0.25rem;
+}
+
+.todoList {
+  list-style: none;
+  padding: 0;
+}
+
 .todoCheckbox:checked ~ * {
   text-decoration: line-through;
+  text-decoration-thickness: 0.125rem;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+}
+
+.todoItem + .todoItem {
+  margin-top: 0.5rem;
+}
+
+.todoDelete {
+  margin-left: 1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 1.25rem;
+  background-color: transparent;
+}
+
+.todoDelete:hover {
+  border: 0.125rem solid;
 }

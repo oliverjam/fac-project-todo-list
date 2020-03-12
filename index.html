@@ -7,26 +7,42 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>Add todos</h2>
-    <form id="todoForm">
-      <label for="newTodo">New task</label>
-      <input type="text" id="newTodo" name="newTodo" />
+    <main>
+      <h1>FAC Tasks</h1>
+      <h2>Add todos</h2>
+      <form id="todoForm">
+        <label for="newTodo">New task</label>
+        <div class="addTodoRow">
+          <input
+            type="text"
+            id="newTodo"
+            class="newTodo"
+            name="newTodo"
+            required
+          />
 
-      <button id="addTodo" type="submit" aria-label="Save task">&plus;</button>
-    </form>
-    <h2>Todos</h2>
-    <label for="filterComplete">Toggle completed</label>
-    <input id="filterComplete" type="checkbox" />
+          <button id="addTodo" class="addTodo" type="submit">
+            Add task &plus;
+          </button>
+        </div>
+      </form>
 
-    <ul id="todoList"></ul>
+      <h2>Todo list</h2>
+      <label for="filterComplete" class="checkboxRow">
+        <span>Toggle completed</span>
+        <input id="filterComplete" type="checkbox" />
+      </label>
+
+      <ul id="todoList" class="todoList"></ul>
+    </main>
 
     <template id="todoItem">
-      <li>
-        <label>
+      <li class="todoItem">
+        <label class="checkboxRow">
           <input class="todoCheckbox" type="checkbox" />
           <span></span>
         </label>
-        <button aria-label="delete todo">&times;</button>
+        <button class="todoDelete" aria-label="delete todo">&times;</button>
       </li>
     </template>
     <script src="todo.js"></script>
