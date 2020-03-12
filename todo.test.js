@@ -4,8 +4,12 @@ test("Submitting a new task adds it to the list", t => {
   const addTodoButton = document.querySelector("#addTodo");
   addTodoButton.click(); // submit the add todo form
   const todoList = document.querySelector("#todoList");
-  const todoItem = todoList.firstElementChild;
-  t.equal(todoItem.textContent, "test thing to do"); // our task should be inside the todo list
+  const todoLabel = todoList.firstElementChild.querySelector("span");
+  t.equal(
+    todoLabel.textContent,
+    "test thing to do",
+    "New todo is added to the list"
+  ); // our task should be inside the todo list
 
   // reset DOM so we don't impact other tests
   todoInput.value = "";
