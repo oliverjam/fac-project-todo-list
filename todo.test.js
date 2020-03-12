@@ -8,7 +8,6 @@ function addTestTodo(text) {
 
   const reset = () => {
     // reset DOM so we don't impact other tests
-    todoInput.value = "";
     todoList.innerHTML = "";
   };
   return { todoItem, todoList, reset };

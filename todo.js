@@ -15,6 +15,7 @@ todoForm.addEventListener("submit", event => {
     todoItem.remove();
   });
   todoList.appendChild(dom);
+  todoForm.reset();
 });
 
 filterComplete.addEventListener("input", () => {
