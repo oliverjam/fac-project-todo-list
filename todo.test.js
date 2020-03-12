@@ -33,9 +33,10 @@ test("Checking an entry marks it as complete", t => {
   todoCheckbox.click();
 
   const labelStyles = getComputedStyle(todoLabel);
+  const textDecoration = labelStyles["text-decoration"];
   t.equal(
-    labelStyles["text-decoration"],
-    "line-through rgb(0, 0, 0)",
+    textDecoration.includes("line-through"),
+    true,
     "Label should have strikethrough applied"
   );
 
