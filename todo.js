@@ -1,6 +1,7 @@
 const todoForm = document.querySelector("#todoForm");
 const todoList = document.querySelector("#todoList");
 const todoTemplate = document.querySelector("#todoItem");
+const toggleFilter = document.querySelector("#filterComplete");
 
 todoForm.addEventListener("submit", event => {
   event.preventDefault();
@@ -14,4 +15,16 @@ todoForm.addEventListener("submit", event => {
     todoItem.remove();
   });
   todoList.appendChild(dom);
+});
+
+filterComplete.addEventListener("input", () => {
+  const todos = todoList.querySelectorAll("li");
+  todos.forEach(todo => {
+    const checkbox = todo.querySelector("input[type='checkbox']");
+    if (filterComplete.checked && checkbox.checked) {
+      todo.setAttribute("hidden", "");
+    } else {
+      todo.removeAttribute("hidden");
+    }
+  });
 });

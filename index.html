@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h2>Add todos</h2>
     <form id="todoForm">
       <label for="newTodo">New task</label>
       <input type="text" id="newTodo" name="newTodo" />
 
       <button id="addTodo" type="submit" aria-label="Save task">&plus;</button>
     </form>
+    <h2>Todos</h2>
+    <label for="filterComplete">Toggle completed</label>
+    <input id="filterComplete" type="checkbox" />
+
     <ul id="todoList"></ul>
 
     <template id="todoItem">
       <li>
         <label>
-          <input type="checkbox" />
+          <input class="todoCheckbox" type="checkbox" />
           <span></span>
         </label>
         <button aria-label="delete todo">&times;</button>
